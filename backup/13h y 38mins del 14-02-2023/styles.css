@@ -1,0 +1,40 @@
+body{
+    background-color: gray;
+}
+
+.container{
+    background-color: white;
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 30px;
+    box-shadow: 10px 10px 5px #000000;
+    text-align: center;
+    padding-top: 30px ;
+}
+
+input{
+    display: block;
+    margin: auto;
+    width: 300px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.init{
+    margin-top: 70px;
+}
+
+.registro{
+    display: block;
+    color: green;
+    text-decoration: none;
+    size: 5px;
+    margin-top: 10px;
+}
+
+table{
+    margin: auto;
+    border-collapse: collapse;
+}

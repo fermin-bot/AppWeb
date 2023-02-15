@@ -1,0 +1,78 @@
+
+<?php
+
+// header('location: pagina1.html'); //Redirecciona a la pagina de inicio
+
+// exit();
+
+$user = $_POST['user'];
+$email = $_POST['email'];
+$password = $_POST['passwd'];
+
+// echo $user, " ", $password, " ", $email;
+
+$conexion = new mysqli("localhost","root","","aplicacionweb");
+
+// $Q_user = "SELECT Nombre,Correo_electronico FROM users WHERE Nombre LIKE '%$user%'";
+
+$Q_user_nombre = "select * from users where Nombre = '$user';";
+
+$Q_user_CE = "select * from users where Correo_electronico = '$email';";
+
+// if (mysqli_query($conexion,'SELECT Nombre FROM users WHERE Nombre = $user') == $user){
+//     echo "Ese nombre de usuario ya existe";
+// }
+// if (mysqli_query($conexion,'SELECT Correo_electronico FROM users WHERE Correo_electronico = $email') == $email){
+//     echo "Ese correo electronico ya existe";
+// }
+// if(mysqli_query($conexion,'SELECT Nombre FROM users WHERE Nombre = $user') != $user && 'SELECT Correo_electronico FROM users WHERE Correo_electronico = $email' != $email){
+      
+// }p
+
+// $result = mysqli_query($conexion, $Q_user);
+
+// while($fila = mysqli_fetch_array($result)){
+//     echo "<br>";
+//         for($i=0; $i < mysqli_field_count($conexion); $i++){
+//             echo $fila[$i], " ";
+//         }
+// }
+
+// mysqli_query($conexion,"INSERT INTO users (Nombre,Contraseña,Correo_electronico) VALUES ('$user','$password','$email');");
+
+// print_r(mysqli_query($conexion, $Q_user));
+// echo "<br><br><br>";
+
+// print_r($mysqli->query($Q_user_nombre));
+
+
+$nombre = mysqli_fetch_array(mysqli_query($conexion, $Q_user_nombre))["Nombre"];
+print_r($nombre);
+
+$correo = mysqli_fetch_array(mysqli_query($conexion, $Q_user_CE))["Correo_electronico"];
+print_r($correo);
+
+if ($user == $nombre || $email == $correo) {
+  echo '<script language="javascript">alert("Ese nombre de usuario o correo electronico ya existe");</script>';
+  // header('location: registro.html');
+}
+else{
+  mysqli_query($conexion,"INSERT INTO users (Nombre,Contraseña,Correo_electronico) VALUES ('$user','$password','$email');");
+  echo "Usuario registrado";
+  // header('location: index.html');
+}
+
+
+// echo $nombre, " ", $correo;
+
+// if ($row['Nombre'] == $user || $row['Correo_electronico'] == $email) {
+//   echo '<script language="javascript">alert("Ese nombre de usuario o correo electronico ya existe");</script>';
+//   // header('location: registro.html');
+// }
+// else{
+//   mysqli_query($conexion,"INSERT INTO users (Nombre,Contraseña,Correo_electronico) VALUES ('$user','$password','$email');");
+//   echo "Usuario registrado";
+//   // header('location: index.html');
+// }
+
+?>

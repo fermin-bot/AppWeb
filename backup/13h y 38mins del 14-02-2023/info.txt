@@ -1,0 +1,1 @@
+en este back up esta el archivo load que tiene una busqueda en todas las columnass de la db

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <form action="load.php" method="post">
+        <input type="text" name="file"> 
+        <input type="submit" value="Buscar">
+    </form>
+
+    <table>
+        <thead>
+            <th>Id_nodo</th>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Date</th>
+        </thead>
+
+        <tbody id="content">
+
+        </tbody>
+    </table>
+
+    <script>
+
+        GetData()
+
+        document.getElementById("file").addEventListener("keyup", GetData)
+
+        function GetData(){
+            let input = document.getElementById("file").value
+            let content = document.getElementById("content")
+            let url = "load.php"
+            let formdata = new FormData()
+            formdata.append("file", input)
+
+            fetch(url, {
+                method: "POST",
+                body: formdata
+            }).then(response => response.json())
+              .then(data => {
+                content.innerHTML = data
+              }).catch(error => console.log(error))
+        }
+
+    </script>
+
+</body>
+</html>
