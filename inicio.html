@@ -23,8 +23,8 @@
 <body>
     
     <form action="" method="post">
-        <input type="text" name="file"> 
-        <input type="button" value="Buscar" onclick="GetData()">
+        <input type="text" id="file" name="file"> 
+        <!-- <input type="button" value="Buscar" onclick="GetData()"> -->
     </form>
 
     <table>
@@ -44,10 +44,9 @@
 
         // GetData()
 
-        document.getElementById("file").addEventListener("keyup", GetData())
+        document.querySelector('input[name="file"]').addEventListener("keyup", GetData)
 
         function GetData(){
-           document.getElementById("content").innerHTML = "Hola"
             let input = document.getElementById("file").value
             let content = document.getElementById("content")
             let url = "load.php"
@@ -57,14 +56,11 @@
             fetch(url, {
                 method: "POST",
                 body: formaData
-            }).then(response => response.json())
+        }).then(response => response.json())
               .then(data => {
                 content.innerHTML = data
               }).catch(error => console.log(error))
         }
-
-
     </script>
-
 </body>
 </html>

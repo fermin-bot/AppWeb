@@ -8,7 +8,7 @@ $table = 'files';
 
 $file = isset($_POST['file']) ? $conn->real_escape_string($_POST['file']) : null;
 
-$sql = "SELECT ". implode(", ", $columns) ." FROM ". $table ." WHERE Name LIKE '%$file%';";
+$sql = "SELECT ". implode(", ", $columns) ." FROM ". $table ." WHERE Name LIKE '%{$file}%';";
 
 $result = $conn->query($sql);
 
@@ -32,7 +32,11 @@ if ($num_lineas > 0) {
     $html .=  '<td colspan="6">0 results</td>';
     $html .=  "</tr>";
 }
-echo $html;
-exit();
+
 echo json_encode($html, JSON_UNESCAPED_UNICODE);
+
+// echo json_encode($html);
+
+// echo $html;
+
 ?>
