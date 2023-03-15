@@ -6,21 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="registro.css"/>
 </head>
 <body>
 
     <div class="container">
-        <div class="init">    
+        <div class="reg">    
             <h1>Registro</h1>
             
             <form action="registro.php" method="post">
-            <input type="text" name="user" placeholder="Usuario" minlength="4" maxlength="15">
-            <input type="text" name="email" placeholder="Correo electronico" minlength="4" maxlength="40">
-            <input type="password" name="passwd" placeholder="Contraseña" minlength="4" maxlength="15">
-            <input type="submit" value="Registrarse" class="boton">
+                <input class="req" type="text" name="user" placeholder="Usuario" minlength="4" maxlength="15">
+                <input class="req" type="text" name="email" placeholder="Correo electronico" minlength="4" maxlength="40">
+                <input class="req" type="password" name="passwd" placeholder="Contraseña" minlength="4" maxlength="15">
+                <input class="req" type="submit" value="Registrarse" class="boton">
             </form>
         </div>
-        <a class="registro" href="index.html">¿Ya tienes cuenta? Inicia sesion.</a>
+        <a class="registro" href="index.php">¿Ya tienes cuenta? Inicia sesion.</a>
     </div>
     
 </body>

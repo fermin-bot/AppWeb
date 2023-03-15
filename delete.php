@@ -1,14 +1,15 @@
 <?php
 
-require_once('config.php');
+    session_start();
 
-$columns = ['Id_nodo','Name','Size','Date'];
+    require_once('config.php');
+    require_once('db.php');
 
-$table = 'files';
+    $db = new db($_SESSION['user']);
 
-$file = isset($_POST['file']) ? $conn->real_escape_string($_POST['file']) : null;
+    $id_prop = $db->select_file('propiedad');
 
-$sql = "SELECT ". implode(", ", $columns) ." FROM ". $table ." WHERE Name LIKE '%{$file}%';";
+$sql = "SELECT Id_nodo,Name,Size,Date FROM files WHERE propiedad = $id_prop;";
 
 $result = $conn->query($sql);
 
@@ -44,14 +45,12 @@ if ($num_lineas > 0) {
 
 } else {
     $html .= "<tr>";
-    $html .=  '<td colspan="6">0 results</td>';
+    $html .=  '<td colspan="4">0 results</td>';
     $html .=  "</tr>";
 }
 
-echo json_encode($html, JSON_UNESCAPED_UNICODE);
+echo '<link rel="stylesheet" href="styles.css">';
 
-// echo json_encode($html);
-
-// echo $html;
+echo '<table>'.$html.'</table>';
 
 ?>

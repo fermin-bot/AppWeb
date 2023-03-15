@@ -1,29 +1,54 @@
-body{
-    background-color: gray;
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 174px;
+    background-image: url("svg.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: lightblue;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .container{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     width: 500px;
     height: 400px;
     margin: auto;
     margin-top: 10%;
     border-radius: 30px;
-    box-shadow: 10px 10px 5px #000000;
+    box-shadow: 10px 10px 5px #2e2e2e;
     text-align: center;
     padding-top: 30px ;
 }
 
-input{
+.cont{
+    width: 80%;
+    margin: auto;
+    margin-top: 3%;
+}
+
+.req{
     display: block;
     margin: auto;
     width: 300px;
     height: 30px;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .init{
-    margin-top: 70px;
+    margin-top: 50px;
+}
+
+.reg{
+    margin-top: 10px;
 }
 
 .registro{
@@ -34,8 +59,8 @@ input{
     margin-top: 10px;
 }
 
-table, th, td {
+/* table, th, td {
     margin: auto;
     border: 1px solid black;
     border-collapse: collapse;
-}
+} */

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "compas": "^0.0.234",
+    "compass": "^0.1.1"
+  }
+}

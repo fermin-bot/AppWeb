@@ -1,0 +1,18 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 174px;
+    background-image: url("svg.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: lightblue;
+    height: 100vh;
+    overflow: hidden;
+}

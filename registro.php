@@ -1,9 +1,12 @@
 
 <?php
 
-$user = $_POST['user'];
-$email = $_POST['email'];
-$password = $_POST['passwd'];
+require_once('config.php');
+
+$user = isset($_POST['user']) ? $conn->real_escape_string($_POST['user']) : null;
+$password = isset($_POST['passwd']) ? $conn->real_escape_string($_POST['passwd']) : null;
+$email = isset($_POST['email']) ? $conn->real_escape_string($_POST['email']) : null;
+
 
 include 'config.php';
 
@@ -21,9 +24,10 @@ if ($user == $nombre || $email == $correo) {
   exit();
 }
 else{
-  mysqli_query($conn,"INSERT INTO users (Nombre,Contraseña,Correo_electronico) VALUES ('$user','$password','$email');");
+  require_once('imagen.php');
+  mysqli_query($conn,"INSERT INTO users (Nombre,Contraseña,Correo_electronico,Color,img) VALUES ('$user','$password','$email','#b1cff2',$imagen);");
   echo '<script language="javascript">alert("Usuario registrado");</script>';
-  header('location: index.html');
+  header('location: index.php');
   exit();
 }
 
