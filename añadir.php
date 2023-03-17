@@ -63,23 +63,19 @@ if ($num_lineas > 0) {
             background-repeat: no-repeat;
             padding-top: 10vh;
         }
-        .inicio{
-    color: rgba(174, 174, 174, 0.9);
-    /* display: block; */
-    text-decoration: none;
-   
-}
     </style>
 </head>
 <?='<body style="background-color:' .$_SESSION['color'].'">'?>
 <div class="contain">
-<form action='del.php' method='post'>
+<form action='add.php'class='div-in' method='post'>
     <div class='div-in'>
-        <input type='number' id='id_lineas' maxlength='10' name='borrar' placeholder='Id del archivo a borrar'>
-        <input class='btn btn-primary' id='borrar' type='submit' value='Borrar'>
+        <input type='text'name='nombre' placeholder='Nombre del archivo '>
+        <input type='file'>
+        <input class='btn btn-primary' id='borrar' type='submit' value='Añadir archivo' class='btn btn-primary'>
         <button type="button" class='btn btn-primary' onclick="location.href='inicio.php'">Inicio</button>
     </div>
 </form>
+
 
 <?='<table class="table table-striped-columns tabla">
 
@@ -95,5 +91,7 @@ if ($num_lineas > 0) {
 
 '.$html.'</table>'?>
 </div>
+<br><br>
+
 </body>
 </html>

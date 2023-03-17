@@ -9,14 +9,17 @@ $user = isset($_POST['user']) ? $conn->real_escape_string($_POST['user']) : null
 $password = isset($_POST['passwd']) ? $conn->real_escape_string($_POST['passwd']) : null;
 
 $db = new db($user);
+$hash = $db->select_user('Contraseña');
 
 // $Q_user =  mysqli_fetch_array(mysqli_query($conn, "select Nombre,Contraseña from users where Nombre = '$user' and Contraseña = '$password';"));
 
 // if ($Q_user["Nombre"] == $user && $Q_user["Contraseña"] == $password) {
 
-  if ($db->select_user('Nombre') == $user && $db->select_user('Contraseña') == $password) {
+  // if ($db->select_user('Nombre') == $user && $db->select_user('Contraseña') == $password) {
 
-  
+
+    if ($db->select_user('Nombre') == $user && password_verify($password, $hash) == true ) {
+ 
 
   // echo '<script language="javascript">alert("Se ha iniciado sesion");</script>';
 

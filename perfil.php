@@ -12,79 +12,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Perfil</title>
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <style>
-        /* *{
-            padding: 0;
-            margin : 0;
-            box-sizing: border-box;
-
-        } */
-        :root {
-  /* --black: #00000050; */
-  /* --white: #ffffff; */
-}
-        div{
-           
-        }
-        .container{
-            /* background: #000000; */
-            display: inline-block;
-            /* border: #c4dbfa solid 3px; */
-            padding: 30px;
-        }
-
-        .d{
-            width: 70%;
-            height: 80vh;
-        }
-
-        .i{
-            width: 20%;
-            height: 90vh;
-            text-align: right ;
-        }
-        .a{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 5px;
-            background-color: rgba(193, 252, 252, 0.629);
-            width: 98vw;
-            height: 97vh;
-        }
-        /* body{
-            background-color: rgb(252, 243, 243);
-        } */
-        a{
-            text-decoration: none;
-            color: black; 
-            font-size: 30px;
-        }
-        a:hover{
-            color: gray;
-        }
-       
-        *{
-            font-family: Arial, Helvetica, sans-serif;
-            font-style: normal;
-        }
-        .dividor{
-            /* margin-top: 3vh; */
-            /* margin-bottom: 3vh; */
-            height:90vh; 
-            width:0.1px; 
-            /* border: solid 1px var(--black); */
-            
-            border: solid 1px black;
-        }
-            /* que invierta el color de fondo */
-        
-        
-    </style>
-    
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="perfil.css">
 </head>
 
 
@@ -92,30 +24,30 @@
 
     
 
-    <div class="a">
+    <div class="d-all">
         
-        <div class="container i">
+        <div class="container d-left">
             <a href="inicio.php">    
-                <i class="fi fi-rr-document"> 
+                <img src="img/home.png"  alt="Logo" width="30vw" height="30vh"> 
                     Inicio
                 </i>
             </a><br>
             <a href="index.php">
-                <i class="fi fi-rr-document"> 
+                <img src="img/salida.png" alt="Logo" width="30vw" height="30vh">
                     Cerrar sesión
-                </i>
+                
             </a>
         </div>
 
         <div class="dividor"></div>
 
-        <div class="container d">
+        <div class="container d-right">
             
             <!-- <a href=""><i class="fi fi-rr-document ind"> hola</i></a> https://www.flaticon.es/ -->
 
                 <!--  Cambiar el color del ui  -->
 
-                <?="<img class='rotated' src='data:image/png; base64," . base64_encode($img) . "' ' alt='Logo' width='200vw' height='200vh'>"?>
+                <?="<img class='rotated perfil' src='data:image/png; base64," . base64_encode($img) . "' ' alt='Logo' width='200vw' height='200vh'>"?>
 
             <form action="Funcionalidades/cambiar_color.php" method="post">
                 <input type="color" name="color">

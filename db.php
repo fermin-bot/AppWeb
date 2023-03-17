@@ -15,8 +15,7 @@ class db {
         $this->parametro = $parametro;
         $sql = "Select $this->parametro from users where Nombre = '$this->usuario';";
         $nomb = mysqli_fetch_array(mysqli_query($this->conn, $sql))[0];
-        return $nomb;  
-        destruct();     
+        return $nomb;    
     }
 
         // Metodos que afectan a la tabla users
@@ -46,27 +45,28 @@ class db {
     public function select_file($parametro){
         $this->parametro = $parametro;
         $sql = "Select $this->parametro from files where propiedad = (Select id_user from users where Nombre = '$this->usuario'); ";
-        $nomb = mysqli_fetch_array(mysqli_query($this->conn, $sql))[0];
-        return $nomb;  
-        destruct();     
+        $nomb = mysqli_fetch_array(mysqli_query($this->conn, $sql));
+        return $nomb;   
     }
 
-    public function insert_file(){
-        $sql = "Insert into files (Nombre, Contraseña, imagen) values ('$this->usuario', '$this->parametro', 'img/defecto.jpg')";
+    public function insert_file($parametro, $valor){
+        $this->parametro = $parametro;
+        $this->valor = $valor;
+        $Date = date('Y-m-d');
+        $sql = "INSERT INTO files ($parametro, Date, propiedad) VALUES ('$valor', '$Date' ,(SELECT id_user FROM users WHERE Nombre = '$this->usuario'))";
+
+        // echo $sql;
         mysqli_query($this->conn, $sql);
-        destruct();
     }   
 
     public function update_file(){
         $sql = "Update files set $this->parametro = '$this->usuario' where Nombre = '$this->usuario'";
         mysqli_query($this->conn, $sql);
-        destruct();
     }
 
     public function delete_file(){
-        $sql = "Delete from files where Nombre = '$this->usuario'";
+        $sql = "Delete from files where id_nodo = '$this->usuario'";
         mysqli_query($this->conn, $sql);
-        destruct();
     }
 
     public function propiedad(){

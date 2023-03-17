@@ -1,0 +1,149 @@
+table, th, td {
+    margin: auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-top: 130px;
+}
+th {
+    padding: 10px;
+    width: 100px;
+}
+tbody > td{
+    padding: 10px;
+    width: 100px;
+}
+
+#file{
+    width: 102.5%;
+    height: 70px;
+    margin: -10px;  
+    margin-left: -10px;          
+    background-color: #b1cff2;
+}
+td{
+    width: 25%;
+}
+.tabla{
+    width: 90%;
+    border: solid 4px gray;
+}
+
+.cont{
+    width: 80%;
+    margin: auto;
+    margin-top: 3%;
+}
+
+/* Imagen de perfil */
+
+.rotated {
+    transition : 1s;
+}
+.rotated:hover{
+    transform: scale(1.5);
+    margin : 30px;
+}
+img{
+    border-radius: 1000px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    border: 4px solid #2e2e2e;
+    cursor: pointer;
+}
+
+/* Tabla botones */
+
+.crud{
+    text-align: center;
+}
+.crud > button{
+   /* margin-left: 15%; */
+   /* margin-right: 15%;  */
+   margin-bottom : 6px;
+   display: inline;
+}
+.crud > a{
+   /* margin-left: 15%; */
+   /* margin-right: 15%;  */
+   margin-bottom : 6px;
+   display: inline;
+}
+
+.btn{
+    transition: 0.5s;
+    display: block;
+}
+
+.btn:hover{
+    transform: scale(1.2);
+}
+
+.but-pad{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+/*  Nav-bar */
+
+.nav-btn{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 50px;
+    cursor: pointer;
+}
+#navegador {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -200px;
+    /* left: 0; */
+    width: 200px;
+    height: 100%;
+    background-color: #262626;
+    transition: left 0.5s ease-in-out;
+    /* text-align: center; */
+}
+
+#navegador > ul {
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+    font-weight: bold;
+}
+
+#bac-icon{
+    font-size: 50px;
+    width: 30px;
+    height: 30px;
+    /* width: 50px;
+    height: 50px; */
+    /* background-color: white ; */
+    position: relative; 
+    margin: 10px;
+    transition: 0.5s ;
+    rotate: 180deg;
+}
+
+#bac-icon:hover{
+    transform: rotate(180deg);
+}
+.nav-div{
+    width: 100%;
+    background-color: pink;
+    text-align: right;
+}
+
+
+.nav-a{
+    color: lightgray;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+body{
+    background-image: url(svg.svg);
+}

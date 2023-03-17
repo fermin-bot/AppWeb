@@ -30,16 +30,6 @@ if ($num_lineas > 0) {
         $html .=  "<td>" . $row['Date'] . "</td>";
         $html .=  "</tr>";
         $id++;
-        if($fila = false){
-            $html .=  "<td>" . $row['Id_nodo'] . "</td>";
-            $html .=  "<td>" . $row['Name'] . "</td>";
-            $html .=  "<td>" . $row['Size'] . "</td>";
-            $html .=  "<td>" . $row['Date'] . "</td>";
-            $html .=  "</tr>";
-            $fila = true;
-        } else {
-            $fila = false;
-        }
     }
 
 } else {

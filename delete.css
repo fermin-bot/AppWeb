@@ -1,0 +1,110 @@
+body {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.tabla{
+ width: 60vw;
+ /* height: 80vh; */
+ background-color: rgba(255, 228, 196, 0.537);
+ border: 1px solid black;
+ margin-top: 0px;
+ 
+}
+
+.tabla > thead > tr > td{
+    border: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.tabla > tbody > tr > td{
+    border: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.div-in{
+    width: 60vw;
+    margin: auto;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+    align-items: stretch;
+    align-content: center;
+    flex-direction: row;
+}
+
+
+
+
+
+
+.rotated {
+    transition : 1s;
+}
+.rotated:hover{
+    transform: scale(1.5);
+    margin : 30px;
+}
+.imge{
+    border-radius: 1000px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    border: 4px solid #2e2e2e;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.contain{
+    /* border: #2e2e2e solid 4px; */
+    width: 60vw;
+    /* margin: auto; */
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+    /* margin-bottom: 174px; */
+    background-image: url("svg.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: lightblue;
+    height: 100vh;
+    overflow: hidden;
+}
+.glassmorf{ /* glassmorfismo*/
+    background: rgba( 255, 255, 255, 0.65 );
+    background: rgba( 255, 255, 255, 0.55 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+
+.inicio{
+    color: rgba(174, 174, 174, 0.529);
+    display: block;
+    text-decoration: none;
+}
